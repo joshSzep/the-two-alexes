@@ -120,8 +120,22 @@ else
     )
 fi
 
+if [[ -x "$SCRIPT_DIR/generate-epub.sh" ]]; then
+    (
+        cd "$SCRIPT_DIR"
+        ./generate-epub.sh
+    )
+else
+    (
+        cd "$SCRIPT_DIR"
+        bash ./generate-epub.sh
+    )
+fi
+
 require_file "$REPO_ROOT/The Two Alexes.pdf" "generated PDF"
+require_file "$REPO_ROOT/The Two Alexes.epub" "generated EPUB"
 cp "$REPO_ROOT/The Two Alexes.pdf" "$WEBSITE_DIR/The Two Alexes.pdf"
+cp "$REPO_ROOT/The Two Alexes.epub" "$WEBSITE_DIR/The Two Alexes.epub"
 
 render_chapter_html "$CHAPTER_SOURCE" > "$CHAPTER_HTML"
 
@@ -853,6 +867,7 @@ cat > "$INDEX_FILE" <<'HTML'
                     <a href="#chapter">Chapter One</a>
                     <a href="#download">Download</a>
                     <a class="primary-link" href="The Two Alexes.pdf" download>PDF</a>
+                    <a class="primary-link" href="The Two Alexes.epub" download>EPUB</a>
                 </nav>
             </div>
         </div>
@@ -866,7 +881,8 @@ cat > "$INDEX_FILE" <<'HTML'
                     <p class="lede">Inside a cavity held open in the corona of an unstable star, two people with the same name discover that survival can be shared more easily than love.</p>
                     <p class="microcopy">A literary hard science fiction novel about confinement, asymmetry, routine, and the quiet brutality of needing more than the universe, or another person, can return.</p>
                     <div class="hero-actions">
-                        <a class="primary" href="The Two Alexes.pdf" download>Download the Full Book</a>
+                        <a class="primary" href="The Two Alexes.pdf" download>Download PDF</a>
+                        <a class="secondary" href="The Two Alexes.epub" download>Download EPUB</a>
                         <a class="secondary" href="#chapter">Read Chapter One</a>
                     </div>
                 </div>
@@ -904,8 +920,9 @@ cat >> "$INDEX_FILE" <<'HTML'
             <div class="download-panel">
                 <p class="section-label">Download</p>
                 <h2 class="section-heading" id="download-heading">Download the full book</h2>
-                <p>A complete PDF edition is packaged beside this page for offline reading, review, and sharing.</p>
-                <a class="download-link" href="The Two Alexes.pdf" download>Download the Full Book</a>
+                <p>Complete PDF and EPUB editions are packaged beside this page for offline reading, review, sharing, and e-readers.</p>
+                <a class="download-link" href="The Two Alexes.pdf" download>Download PDF</a>
+                <a class="download-link" href="The Two Alexes.epub" download>Download EPUB</a>
             </div>
         </section>
 
