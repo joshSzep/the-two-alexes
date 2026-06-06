@@ -149,6 +149,8 @@ cat > "$INDEX_FILE" <<'HTML'
     <meta name="description" content="A literary hard science fiction novel by Joshua Szepietowski.">
     <meta name="author" content="Joshua Szepietowski">
     <meta name="color-scheme" content="dark">
+    <link rel="icon" type="image/png" href="cover.png">
+    <link rel="apple-touch-icon" href="cover.png">
     <style>
         :root {
             --bg: #040404;
