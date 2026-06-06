@@ -927,7 +927,7 @@ cat >> "$INDEX_FILE" <<'HTML'
         </section>
 
         <footer>
-            The Two Alexes · Joshua Szepietowski
+            The Two Alexes · Joshua Szepietowski · <a href="https://joshszep.com" target="_blank" rel="noreferrer">Author book list</a>
         </footer>
     </div>
 
