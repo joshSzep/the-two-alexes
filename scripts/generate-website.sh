@@ -764,6 +764,10 @@ cat > "$INDEX_FILE" <<'HTML'
                 padding: 0 1rem;
             }
 
+            .hero {
+                padding-top: 13.5rem;
+            }
+
             .masthead {
                 top: 0.75rem;
                 width: calc(100% - 1rem);
